@@ -1,38 +1,6 @@
-var accounts = [
-  { name: 'jay',
-    amount: 125.50,
-    type: 'personal'
-  },
-  { name: 'val',
-    amount: 55125.10,
-    type: 'business'
-  },
-  { name: 'marc',
-    amount: 400.00,
-    type: 'personal'
-  },
-  { name: 'keith',
-    amount: 220.25,
-    type: 'business'
-  },
-  { name: 'rick',
-    amount: 1.00,
-    type: 'personal'
-  },
-];
+// var myPerson = {name: "Paul", height: 172, favoriteFood: "pizza", eatFunction: function eat(){return ("Yum, let's have some " + this.favoriteFood)}};
 
-var personalMoneys = [];
-for (account in accounts){
-  if (accounts[account].type === 'personal'){
-    personalMoneys.push(accounts[account].amount)
-  }
+function eat(){
+     console.log("Yum, let's have some pizza");
 }
-
-var biggestPersonal = Math.max.apply(null, personalMoneys);
-var richPersonalAccountHolder;
-for (account in accounts){
-  if (accounts[account].amount === biggestPersonal){
-    richPersonalAccountHolder = accounts[account].name;
-  }
-}
-console.log(richPersonalAccountHolder);
+eat();

@@ -239,3 +239,5 @@ return richPersonalAccountHolder;
 
 //Section 8
 //Assign a variable myPerson to a hash, giving them a name, height, favourite food and an eat method
+
+var myPerson = {name: "Paul", height: 172, favoriteFood: "pizza", function eat(){console.log("Yum, let's have some " + this.favoriteFood)}};
