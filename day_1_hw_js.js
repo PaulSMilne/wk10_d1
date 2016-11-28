@@ -2,13 +2,13 @@
 
 //what types are these? Write your answer in a comment beside it.
 
-1;
-"cat";
-true;
-[];
-{};
-1.1;
-undefined;
+1; //Number
+"cat"; //String
+true; //Boolean
+[]; //Array
+{}; //Object (hashmap)
+1.1; //Number
+undefined; //undefined
 
 //Section 2
 
@@ -16,14 +16,14 @@ undefined;
 // write your answer in a comment beside it
 // you can use an if to test this...
 1; //true
-"cat";
-true;
-NaN;
+"cat"; //true
+true; //true
+NaN; //false
 [];
 {};
-undefined;
-"";
-0;
+undefined; //false
+""; //false
+0; //false
 
 
 //Section 3
@@ -31,26 +31,60 @@ undefined;
 //Using examples that are different from above...
 
 //3.1 Assign a variable that is a number
+var num = 42;
 //3.2 Assign a variable that is a string
+var animal = "pig";
 //3.3 Assign a variable that is a boolean
+var verity = "true";
 //3.4 Assign a variable that is an object
+var details = {name: "Paul", age: 58, homeTown: "Dunbar"}
+
 
 //Section 4
 //4.1 Write a statement that writes "hello" to the console if it's true and "bye" if it is false
+
+function helloIfTrue(argument){
+     if (argument){
+          console.log("Hello");
+     } 
+     console.log("Bye")
+}
+
+helloIfTrue(true);
 
 //Section 5
 var animals = ["raccoon","hedgehog","mouse","gerbil"];
 
 //5.1. Assign the first element to a variable
+
+var firstAnimal = animals[0];
+
 //5.2. Assign the last element to a variable
+
+var lastAnimal = animals[3];
+
 //5.3. Assign the length of an array to a variable
+
+var animalCount = animals.length;
+
 //5.4. Add an item to the end of the array
+
+animal.push("pig");
+
 //5.5. Add an item to the start of the array
+
+animal.shift("ostrich");
+
 //5.6. Assign the index of hedgehog to a variable
+
+var hedgehogIndex = animals["hedgehog"];
 
 //Section 6
 
 //6.1 Create an array of 5 vegetables
+
+var veg = ["swede", "turnip", "rutabega", "spinach", "carrot"];
+
 //6.2 Loop over the array and write to the console using a "while"
 //6.3 Loop again using a "for" with a counter
 //6.4 Loop again using a "for in"
