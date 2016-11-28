@@ -21,18 +21,18 @@ var accounts = [
   },
 ];
 
-var moneys = [];
-for (account in accounts) {
-  moneys.push(accounts[account].amount) // loops through the array and pushes the values of amount into an empty array
-}
-var maximum = Math.max.apply(null, moneys); //finds the largest value in an array
-
-
-var richPerson;
+var personalMoneys = [];
 for (account in accounts){
-  if (accounts[account].amount == maximum){ //looks for the account with the maximum amount
-    richPerson = accounts[account].name;
+  if (accounts[account].type === 'personal'){
+    personalMoneys.push(accounts[account].amount)
   }
 }
 
-console.log(richPerson);
+var biggestPersonal = Math.max.apply(null, personalMoneys);
+var richPersonalAccountHolder;
+for (account in accounts){
+  if (accounts[account].amount === biggestPersonal){
+    richPersonalAccountHolder = accounts[account].name;
+  }
+}
+console.log(richPersonalAccountHolder);

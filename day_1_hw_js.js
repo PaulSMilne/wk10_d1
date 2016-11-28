@@ -144,7 +144,7 @@ var total = 0;
 for (account in accounts){
   total = total + accounts[account].amount;
 }
-console.log(total);
+return total;
 
 
 //7.2 Find the amount of money in the account with the largest balance
@@ -154,25 +154,23 @@ for (account in accounts) {
   moneys.push(accounts[account].amount) // loops through the array and pushes the values of amount into an empty array
 }
 var maximum = Math.max.apply(null, moneys); //finds the largest value in an array
+return maximum;
 
 
 //7.3 Find the name of the account with the smallest balance
 
 var moneys = [];
-
 for (account in accounts) {
   moneys.push(accounts[account].amount) // loops through the array and pushes the values of amount into an empty array
 }
-
 var minimum = Math.min.apply(null, moneys); //finds the minimum value in the array
-
 var poorPerson;
-
 for (account in accounts){
      if (accounts[account].amount == minimum){ //looks for the object with the minimum value
           poorPerson = accounts[account].name; //pulls out the name of the object found
      }
 }
+return poorPerson;
 
 //7.4 Calculate the average bank account value
 
@@ -182,6 +180,7 @@ for (account in accounts){
 }
 var average = total/accounts.length; //gets the average
 average = average.toFixed(2); //rounds the average to 2 decimal places
+return average;
 
 //7.5 Find the value of marcs bank account
 
@@ -192,6 +191,7 @@ for (account in accounts){
           marcsMoney = accounts[account].amount; //pulls out the amount of the object found
      }
 }
+return marcsMoney;
 
 //7.6 Find the holder of the largest bank account
 
@@ -206,8 +206,35 @@ for (account in accounts){
     richPerson = accounts[account].name;
   }
 }
+return richPerson;
+
 //7.7 Calculate the total cash in business accounts
+
+var businessMoneys = 0;
+for (account in accounts){
+     if (accounts[account].type === 'business'){
+          businessMoneys = businessMoneys + accounts[account].amount;
+     }
+}
+return businessMoneys;
+
 //7.8 Find the largest personal account owner
+
+var personalMoneys = [];
+for (account in accounts){
+  if (accounts[account].type === 'personal'){
+    personalMoneys.push(accounts[account].amount)
+  }
+}
+
+var biggestPersonal = Math.max.apply(null, personalMoneys);
+var richPersonalAccountHolder;
+for (account in accounts){
+  if (accounts[account].amount === biggestPersonal){
+    richPersonalAccountHolder = accounts[account].name;
+  }
+}
+return richPersonalAccountHolder;
 
 
 //Section 8
