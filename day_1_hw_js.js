@@ -10,6 +10,7 @@ true; //Boolean
 1.1; //Number
 undefined; //undefined
 
+
 //Section 2
 
 // what is the truthy/falsiness values of the following
@@ -52,6 +53,7 @@ function helloIfTrue(argument){
 
 helloIfTrue(true);
 
+
 //Section 5
 var animals = ["raccoon","hedgehog","mouse","gerbil"];
 
@@ -78,6 +80,7 @@ animal.shift("ostrich");
 //5.6. Assign the index of hedgehog to a variable
 
 var hedgehogIndex = animals["hedgehog"];
+
 
 //Section 6
 
@@ -111,6 +114,7 @@ for (var vegetable of veg){
   console.log("Vegetable is " + vegetable);
 }
 
+
 //Section 7
 var accounts = [
   { name: 'jay',
@@ -142,6 +146,7 @@ for (account in accounts){
 }
 console.log(total);
 
+
 //7.2 Find the amount of money in the account with the largest balance
 
 var moneys = [];
@@ -149,6 +154,7 @@ for (account in accounts) {
   moneys.push(accounts[account].amount) // loops through the array and pushes the values of amount into an empty array
 }
 var maximum = Math.max.apply(null, moneys); //finds the largest value in an array
+
 
 //7.3 Find the name of the account with the smallest balance
 
@@ -169,8 +175,37 @@ for (account in accounts){
 }
 
 //7.4 Calculate the average bank account value
+
+var total = 0;
+for (account in accounts){
+  total = total + accounts[account].amount; //gets the total
+}
+var average = total/accounts.length; //gets the average
+average = average.toFixed(2); //rounds the average to 2 decimal places
+
 //7.5 Find the value of marcs bank account
+
+var marcsMoney;
+
+for (account in accounts){
+     if (accounts[account].name == "marc"){ //looks for the object with the name
+          marcsMoney = accounts[account].amount; //pulls out the amount of the object found
+     }
+}
+
 //7.6 Find the holder of the largest bank account
+
+var moneys = [];
+for (account in accounts) {
+  moneys.push(accounts[account].amount) // loops through the array and pushes the values of amount into an empty array
+}
+var maximum = Math.max.apply(null, moneys); //finds the largest value in an array
+var richPerson;
+for (account in accounts){
+  if (accounts[account].amount == maximum){ //looks for the account with the maximum amount
+    richPerson = accounts[account].name;
+  }
+}
 //7.7 Calculate the total cash in business accounts
 //7.8 Find the largest personal account owner
 
