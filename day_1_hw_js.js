@@ -19,8 +19,8 @@ undefined; //undefined
 "cat"; //true
 true; //true
 NaN; //false
-[];
-{};
+[]; //false
+{}; //false
 undefined; //false
 ""; //false
 0; //false
@@ -135,8 +135,39 @@ var accounts = [
   },
 ];
 //7.1 Calculate the total cash in accounts
+
+var total = 0;
+for (account in accounts){
+  total = total + accounts[account].amount;
+}
+console.log(total);
+
 //7.2 Find the amount of money in the account with the largest balance
+
+var moneys = [];
+for (account in accounts) {
+  moneys.push(accounts[account].amount) // loops through the array and pushes the values of amount into an empty array
+}
+var maximum = Math.max.apply(null, moneys); //finds the largest value in an array
+
 //7.3 Find the name of the account with the smallest balance
+
+var moneys = [];
+
+for (account in accounts) {
+  moneys.push(accounts[account].amount) // loops through the array and pushes the values of amount into an empty array
+}
+
+var minimum = Math.min.apply(null, moneys); //finds the minimum value in the array
+
+var poorPerson;
+
+for (account in accounts){
+     if (accounts[account].amount == minimum){ //looks for the object with the minimum value
+          poorPerson = accounts[account].name; //pulls out the name of the object found
+     }
+}
+
 //7.4 Calculate the average bank account value
 //7.5 Find the value of marcs bank account
 //7.6 Find the holder of the largest bank account

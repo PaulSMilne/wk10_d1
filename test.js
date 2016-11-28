@@ -1,21 +1,42 @@
-var veg = ["swede", "turnip", "rutabega", "spinach", "carrot"];
+var accounts = [
+  { name: 'jay',
+    amount: 125.50,
+    type: 'personal'
+  },
+  { name: 'val',
+    amount: 55125.10,
+    type: 'business'
+  },
+  { name: 'marc',
+    amount: 400.00,
+    type: 'personal'
+  },
+  { name: 'keith',
+    amount: 220.25,
+    type: 'business'
+  },
+  { name: 'rick',
+    amount: 1.00,
+    type: 'personal'
+  },
+];
 
-//6.2 Loop over the array and write to the console using a "while"
+var moneys = [];
+for (account in accounts) {
+  moneys.push(accounts[account].amount) // loops through the array and pushes the values of amount into an empty array
+}
+  // console.log(moneys)
 
-counter = 0;
-while (counter < veg.length){
-  console.log("Vegetable is " + veg[counter]);
-  counter++;
+var minimum = Math.min.apply(null, moneys);
+
+// console.log(minimum);
+
+var poorPerson;
+
+for (account in accounts){
+     if (accounts[account].amount == minimum){
+          poorPerson = accounts[account].name;
+     }
 }
 
-//6.3 Loop again using a "for" with a counter
-
-for (i=0; i<veg.length;i++){
-  console.log("Vegetable is " + veg[i]);
-}
-
-//6.4 Loop again using a "for in"
-
-for (var vegetable in veg){
-  console.log("Vegetable is " + veg[vegetable]);
-}
+console.log(poorPerson);
